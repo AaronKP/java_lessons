@@ -15,7 +15,7 @@ public class Challenge1Main {
             "Enter your date of birth (DD/MM/YYYY)",
             "How far is your favourite store from your home (km)?"
         };
-         
+         //for loop to iterate through prompts array and based on a case perform required input gathering
          for (int i = 0; i < prompts.length; i++) {
             switch(i){
                 case 0:
@@ -28,7 +28,7 @@ public class Challenge1Main {
                     date_of_birth=Prompter.prompt(prompts[i]);
                     boolean validDob=false; 
                     
-                    chkDob:while(validDob==false){
+                    chkDob:while(validDob==false){//input validation
                         if(DateValidator.isValid(date_of_birth)==true){
                             validDate=true;
                             break chkDob;
@@ -56,6 +56,7 @@ public class Challenge1Main {
                     break;
             }
         }
+            //method call for input display
             Printer.print(name, surname, date_of_birth,Double.toString(MilesCalculator.calculate(distance_from_store)));  
     }
 }

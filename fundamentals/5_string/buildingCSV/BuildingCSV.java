@@ -40,3 +40,24 @@ public class BuildingCSV{
 		System.out.println("(1) Capture new user\n(2) Print CSV\n(3) Exit");
 	}
 }
+
+public class NumberValidator {
+    public static boolean isValid(String km) {
+        if (km == null || km.isEmpty()) {
+            return false; // Null or empty string is not a valid number
+        }
+
+        try {
+            Double.parseDouble(km);
+            return true; // Parsing successful, input is a valid number
+        } catch (NumberFormatException e) {
+            return false; // Parsing failed, input is not a valid number
+        }
+    }
+}
+
+//set the precision of the miles calculated to 2 decimal places to avoild irrational numbers
+ private static String formatMiles(String miles) {
+        double milesDouble = Double.parseDouble(miles);
+        return String.format("%.2f", milesDouble);
+}

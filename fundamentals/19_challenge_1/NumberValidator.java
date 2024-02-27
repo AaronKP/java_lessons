@@ -2,7 +2,7 @@ import java.util.regex.Pattern;
 
 public class NumberValidator {
     //regex pattern used to determine if the entered string is numeric.
-    //-? checks for option negative signs,
+    //-? checks for optional negative signs,
     //\\d+ - checks for one or more numbers,
     //(\\.\\d)? checks for optional decimals
     private static Pattern numericPattern = Pattern.compile("-?\\d+(\\.\\d+)?");
