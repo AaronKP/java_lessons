@@ -9,7 +9,7 @@ public class DateValidator {
         //define format object using desired string pattern/format in static method patternOf()
         DateTimeFormatter dobFormat =DateTimeFormatter.ofPattern(DOB_FORMAT);
         
-        try{// togetehr with parse, try is used for input validation
+        try{// together with parse, try is used for input validation
            
             LocalDate.parse(dob,dobFormat);//static method parse. Parse dob according to specified format
             isValidFormat=true;
