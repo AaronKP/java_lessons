@@ -11,6 +11,8 @@ public class Challenge2Main {
         boolean proceed=true;//sentinel for continuous runnning of application.
         boolean validOperator;//operator/menu item sentinel
         boolean validOperand;//operand sentinel
+        boolean validMenuOpt;
+        String menuOpt=null;
         String response;
         String operand1=null;
         String operand2=null;
@@ -19,15 +21,27 @@ public class Challenge2Main {
         while(proceed){
            validOperator=false;
            validOperand=false;
+           validMenuOpt=false;
            MenuPrinter.printMenu();//print menu
            
-           //check if menu item / operator is valid with infinite loop
-           while(validOperator==false){
-               operator=Prompter.prompt("Enter an operation + - * / %\n************************************");
-               validOperator=MenuValidator.validate(operator);//set sentinel value based on whether menu item is valid.
-               System.out.println(validOperator==false?"************************************\nERROR! Select from + - * / %\n"
-                       + "************************************":"Operator ("+operator+") Selected\n************************************");
+           //validate menu option
+           while(validMenuOpt==false){
+               menuOpt=Prompter.prompt("Enter menu item (1-6):");
+               validMenuOpt=MenuValidator.validateMenuOpt(menuOpt);
+               System.out.println(validMenuOpt==false?"************************************\nERROR! Select from 1,2,3,4,5,6\n"
+                       + "************************************":"Menu item ("+menuOpt+") selected\n************************************");
+               if(menuOpt.equalsIgnoreCase("6")){
+                  String ans=Prompter.prompt("Confirm: Y to end app, any other key to return\n************************************");
+                  if(ans.equalsIgnoreCase("Y")){
+                      System.out.println("Application Ended");
+                      System.exit(0);
+                  }else{
+                      validMenuOpt=false;
+                      MenuPrinter.printMenu();//print menu
+                  }
+               }
            }
+           
            
            //validate first operand
            while(validOperand==false){
@@ -36,6 +50,18 @@ public class Challenge2Main {
                System.out.println((validOperand==false)?"************************************\nInput must be numeric\n"
                        + "************************************":"************************************\n"
                                + "Operand ("+operand1+") Entered\n************************************");           
+           }
+           
+            //check if menu item / operator is valid with infinite loop
+           while(validOperator==false){
+               operator=Prompter.prompt("Enter an operation + - * / %\n************************************");
+               validOperator=MenuValidator.validate(operator);//set sentinel value based on whether menu item is valid.
+               System.out.println(validOperator==false?"************************************\nERROR! Select from + - * / %\n"
+                       + "************************************":"Operator ("+operator+") Selected\n************************************");
+               if(MenuValidator.validateOperandEntered(operator, menuOpt)==false){
+                   System.out.println("Selected operator ("+operator+") does not match chosen menu item:("+menuOpt+")");
+                   validOperator=false;
+               }
            }
            
            validOperand=false;//resent sentinel to validate second operand
