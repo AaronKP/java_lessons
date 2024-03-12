@@ -12,11 +12,14 @@ public class Challenge2Main {
         boolean validOperator;//operator/menu item sentinel
         boolean validOperand;//operand sentinel
         boolean validMenuOpt;
+        boolean useResult=false;
         String menuOpt=null;
         String response;
         String operand1=null;
         String operand2=null;
         String operator=null;
+        String result=null;//for continued use of result in multiple run throughs
+
         
         while(proceed){
            validOperator=false;
@@ -42,24 +45,29 @@ public class Challenge2Main {
                }
            }
            
-           
-           //validate first operand
-           while(validOperand==false){
-               operand1=Prompter.prompt("Enter operand 1");
-               validOperand=NumberValidator.validate(operand1);
-               System.out.println((validOperand==false)?"************************************\nInput must be numeric\n"
-                       + "************************************":"************************************\n"
-                               + "Operand ("+operand1+") Entered\n************************************");           
+           if(useResult){
+               operand1=result;//set operand 1 to the result of last calculation
+           }else{
+                   //validate first operand
+               while(validOperand==false){
+                   operand1=Prompter.prompt("Enter operand 1");
+                   validOperand=NumberValidator.validate(operand1);
+                   System.out.println((validOperand==false)?"************************************\nInput must be numeric\n"
+                           + "************************************":"************************************\n"
+                                   + "Operand ("+operand1+") Entered\n************************************");           
+               }
            }
+           
            
             //check if menu item / operator is valid with infinite loop
            while(validOperator==false){
-               operator=Prompter.prompt("Enter an operation + - * / %\n************************************");
+               operator=Prompter.prompt("Enter an operator + - * / %\n************************************");
                validOperator=MenuValidator.validate(operator);//set sentinel value based on whether menu item is valid.
                System.out.println(validOperator==false?"************************************\nERROR! Select from + - * / %\n"
                        + "************************************":"Operator ("+operator+") Selected\n************************************");
-               if(MenuValidator.validateOperandEntered(operator, menuOpt)==false){
-                   System.out.println("Selected operator ("+operator+") does not match chosen menu item:("+menuOpt+")");
+               if(MenuValidator.validateOperatorEntered(operator, menuOpt)==false){//validate if the operator entered matches the menu option chosen
+                   System.out.println("Entered operator ("+operator+") & menu item:("+menuOpt+") don't correspond");
+                   System.out.println(MenuValidator.displayWrongOperandMessage(menuOpt));
                    validOperator=false;
                }
            }
@@ -86,28 +94,29 @@ public class Challenge2Main {
            
            switch(operator){
                case "+":
+                   result=Double.toString(Addition.add(operand1, operand2));
                    System.out.println("****************SUM*****************");
-                   System.out.println(operand1+" + "+operand2+" = "+Addition.add(operand1, operand2));
+                   System.out.println(operand1+" + "+operand2+" = "+(result=Double.toString(Addition.add(operand1, operand2))));
                    System.out.println("************************************");
                    break;
                case "-":
                    System.out.println("************DIFFERENCE**************");
-                   System.out.println(operand1+" - "+operand2+" = "+Subtraction.subtract(operand1, operand2));
+                   System.out.println(operand1+" - "+operand2+" = "+(result=Double.toString(Subtraction.subtract(operand1, operand2))));
                    System.out.println("************************************");
                    break;
                case "*":
                    System.out.println("**************PRODUCT****************");
-                   System.out.println(operand1+" * "+operand2+" = "+Multiplication.multiply(operand1, operand2));
+                   System.out.println(operand1+" * "+operand2+" = "+(result=Double.toString(Multiplication.multiply(operand1, operand2))));
                    System.out.println("************************************");
                    break;
                case "/":
                    System.out.println("**************QUOTIENT**************");
-                   System.out.println(operand1+" / "+operand2+" = "+Division.divide(operand1, operand2));
+                   System.out.println(operand1+" / "+operand2+" = "+(result=Double.toString(Division.divide(operand1, operand2))));
                    System.out.println("************************************");
                    break;
                case "%":
                    System.out.println("***************MODULO***************");
-                   System.out.println(operand1+" % "+operand2+" = "+Modulus.modulus(operand1, operand2));
+                   System.out.println(operand1+" % "+operand2+" = "+(result=Double.toString(Modulus.modulus(operand1, operand2))));
                    System.out.println("************************************");
                    break;
                    
@@ -116,6 +125,11 @@ public class Challenge2Main {
            response=Prompter.prompt("Continue application? Enter Y to continue or any other key to exit");
            proceed= response.equalsIgnoreCase("Y") ? true :false;
            System.out.println(proceed==true?" ":"Application Ended");
+           //prompt for continued use of result 
+           if(proceed){
+               response=Prompter.prompt("Use result of last calculation? Y for yes, any other key for no");
+               useResult= response.equalsIgnoreCase("Y") ? true :false;
+           }
         }
     }
 }

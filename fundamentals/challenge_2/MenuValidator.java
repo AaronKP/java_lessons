@@ -1,5 +1,6 @@
 public class MenuValidator {
     
+    //validate if the operator macthes the 5 applicable operators
     public static boolean validate(String operator){
         
         boolean validOperator =false;
@@ -19,7 +20,8 @@ public class MenuValidator {
         return validOperator;
     }
     
-     public static boolean validateOperandEntered(String operatorEntered, String menuOpt){
+    //validate if the entered operator matches the menu option
+     public static boolean validateOperatorEntered(String operatorEntered, String menuOpt){
         
     
         String operator=null;
@@ -44,6 +46,7 @@ public class MenuValidator {
         return operatorEntered.equalsIgnoreCase(operator);
     }
     
+    //validate if the user is entering a valid menu item
     public static boolean validateMenuOpt(String opt){
 
         boolean validOption=false;
@@ -72,4 +75,31 @@ public class MenuValidator {
         return validOption;
         
     }
+
+    //custom error message when operator does not match menu option
+     public static String displayWrongOperandMessage(String menuOpt){
+        
+    
+        String message=null;
+        switch(menuOpt){
+            case "1":
+                message="Operator for menu item ("+menuOpt+") addition is +";
+                break;
+            case "2":
+                 message="Operator for menu item ("+menuOpt+") subtraction is -";
+                break;
+            case "3":
+                 message="Operator for menu item ("+menuOpt+") multiplication is *";
+                break;
+            case "4":
+                 message="Operator for menu item ("+menuOpt+") division is /";
+                break;
+            case "5":
+                message="Operator for menu item ("+menuOpt+") modulus is %";
+                break;
+            }
+          
+        return message;
+    }
+
 }
