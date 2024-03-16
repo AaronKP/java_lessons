@@ -4,6 +4,7 @@
  * Purpose : To calculate a result based on a selected mathematical operation involving arithmetic operators and operands supplied by the user
  * A selected option from a menu of arithmetic operations determines which operation is performed.
  */
+
 public class Challenge2Main {
 
     public static void main(String[] args) {
