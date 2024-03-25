@@ -12,7 +12,7 @@ public class MessageUtil {
    // prints the message
    public String printMessage(){
       System.out.println(message);
-      return mess
+      return message;
    }
 
 }
