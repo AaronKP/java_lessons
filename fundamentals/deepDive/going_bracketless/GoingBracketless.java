@@ -13,13 +13,13 @@ public class GoingBracketless{
 		// because we want to print numbers starting at 2 use + 2
 		for(int i=0;i<myArray.length;i++) myArray[i]=random.nextInt(10)+2;
 		//using bracketless while
-		//int j=0;
-		//while(j<myArray.length) myArray[j++]=random.nextInt(10)+2;//use post increment operator to increment loop control
+		int j=0;
+		while(j<myArray.length) myArray[j++]=random.nextInt(10)+2;//use post increment operator to increment loop control
 
 	}
 
 
-	// //method to print elements of array (using bracketless for loop) and determine if the element is greater than a certain number
+	//method to print elements of array (using bracketless for loop) and determine if the element is greater than a certain number
 	// public static void printElements(int [] myArray){
 	// 	for(int i=0;i<myArray.length;i++)//iterates from 0 -10
 	// 		if (myArray[i] > 9) System.out.println(myArray[i]+" is greater than 9");
@@ -37,53 +37,53 @@ public class GoingBracketless{
 	// public static void printElements(int [] myArray){
 	// 	int i=0;
 	// 	while(i<myArray.length)
-	// 		//i=printMessageIncrement_i(myArray[i],i);//braceless while loops only execute a single statement
+	// 		i=printMessageIncrement_i(myArray[i],i);//braceless while loops only execute a single statement
 
-	// 		switch(myArray[i]){
-	// 		case 2: 
-	// 			System.out.println(myArray[i]+" is greater than 1");
-	// 			i++;
-	// 			break;
-	// 		case 3:
-	// 			System.out.println(myArray[i]+" is greater than 2");
-	// 			i++;
-	// 			break;
-	// 		case 4:
-	// 			System.out.println(myArray[i]+" is greater than 3");
-	// 			i++;
-	// 			break;
-	// 		case 5:
-	// 			System.out.println(myArray[i]+" is greater than 4");
-	// 			i++;
-	// 			break;
-	// 		case 6:
-	// 			System.out.println(myArray[i]+" is greater than 5");
-	// 			i++;
-	// 			break;
-	// 		case 7:
-	// 			System.out.println(myArray[i]+" is greater than 6");
-	// 			i++;
-	// 			break;
-	// 		case 8:
-	// 			System.out.println(myArray[i]+" is greater than 7");
-	// 			i++;
-	// 			break;
-	// 		case 9:
-	// 			System.out.println(myArray[i]+" is greater than 8");
-	// 			i++;
-	// 			break;
-	// 		default:
-	// 			System.out.println(myArray[i]+" is greater than 9");
-	// 			i++;
-	// 			break;
+	// 		// switch(myArray[i]){
+	// 		// case 2: 
+	// 		// 	System.out.println(myArray[i]+" is greater than 1");
+	// 		// 	i++;
+	// 		// 	break;
+	// 		// case 3:
+	// 		// 	System.out.println(myArray[i]+" is greater than 2");
+	// 		// 	i++;
+	// 		// 	break;
+	// 		// case 4:
+	// 		// 	System.out.println(myArray[i]+" is greater than 3");
+	// 		// 	i++;
+	// 		// 	break;
+	// 		// case 5:
+	// 		// 	System.out.println(myArray[i]+" is greater than 4");
+	// 		// 	i++;
+	// 		// 	break;
+	// 		// case 6:
+	// 		// 	System.out.println(myArray[i]+" is greater than 5");
+	// 		// 	i++;
+	// 		// 	break;
+	// 		// case 7:
+	// 		// 	System.out.println(myArray[i]+" is greater than 6");
+	// 		// 	i++;
+	// 		// 	break;
+	// 		// case 8:
+	// 		// 	System.out.println(myArray[i]+" is greater than 7");
+	// 		// 	i++;
+	// 		// 	break;
+	// 		// case 9:
+	// 		// 	System.out.println(myArray[i]+" is greater than 8");
+	// 		// 	i++;
+	// 		// 	break;
+	// 		// default:
+	// 		// 	System.out.println(myArray[i]+" is greater than 9");
+	// 		// 	i++;
+	// 		// 	break;
 
-	// 		}
+	// 		// }
 			
 	// }
 
 	
 
-	//method to print elements of array (using bracketless do-while) and determine if the element is greater than a certain number
+	// //method to print elements of array (using bracketless do-while) and determine if the element is greater than a certain number
 	public static void printElements(int [] myArray){
 		int i=0;
 		do
