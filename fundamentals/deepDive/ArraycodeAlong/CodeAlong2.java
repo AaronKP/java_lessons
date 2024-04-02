@@ -2,13 +2,13 @@ public class CodeAlong2{
 	public static void main(String[] args) {
 		//array declarations
 		int [] myArray = new int[100];
-		int [] destination = new int[16];
+		int [] destination = new int[17];
 		//populate array with random nrs
 		populateArray(myArray);
 		System.out.println("\nOriginal array contents:");
 		printArray(myArray);//print original array 
 		System.out.println("\n\nArray copy contents:");
-		System.arraycopy(myArray,15,destination,0,16);
+		System.arraycopy(myArray,15,destination,0,17);
 		printArray(destination);//print copied elements from destination array
 	}
 

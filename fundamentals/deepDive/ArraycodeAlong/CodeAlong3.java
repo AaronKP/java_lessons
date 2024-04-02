@@ -53,7 +53,7 @@ public class CodeAlong3{
 				break;
 			}
 
-			System.out.println("Continue Application? Y for yes, any other key to end ");
+			System.out.println("\n**********************************************\nContinue Application? Y for yes, any other key to end ");
 			proceed =in.nextLine().equalsIgnoreCase("Y") ? true : false;
 			if(proceed ==false){
 				System.out.println("Are you sure ? Y for yes, any other key for no ");
@@ -64,7 +64,7 @@ public class CodeAlong3{
 			}
 			
 		}
-		System.out.println("Application Ended");
+		System.out.println("Application Ended\n**********************************************");
 		
 	
 	}
@@ -211,8 +211,10 @@ public class CodeAlong3{
 		boolean isValidRow =false;
 		while(isValidRow==false){
 			System.out.println("Enter the row to print (1-10)");
+			String rowEntered="";
 			try{
-				userRow=Integer.parseInt(kb.nextLine());//number validation
+				rowEntered=kb.nextLine();
+				userRow=Integer.parseInt(rowEntered);//number validation
 				if((userRow-1)<0||(userRow-1)>my2DArray.length){//validate if number is within acceptable range
 					System.out.println("Row ("+userRow+") is invalid. Available rows are 1-10\n**********************************************");
 					isValidRow =false;
@@ -221,7 +223,7 @@ public class CodeAlong3{
 					isValidRow=true;
 				}
 			}catch(Exception e){
-				System.out.println("Row ("+userRow+") is invalid. Available rows are 1-10\n**********************************************");
+				System.out.println("Row ("+rowEntered+") is invalid. Available rows are 1-10\n**********************************************");
 				isValidRow =false;
 			}	
 		}
@@ -235,8 +237,10 @@ public class CodeAlong3{
 		boolean isValidCol =false;
 		while(isValidCol==false){
 			System.out.println("Enter the column to print (1-10)");
+			String colEntered="";
 			try{
-				userCol=Integer.parseInt(kb.nextLine());//number validation
+				colEntered=kb.nextLine();
+				userCol=Integer.parseInt(colEntered);//number validation
 				if((userCol-1)<0||(userCol-1)>my2DArray[0].length){//validate if number is within acceptable range
 					System.out.println("Column ("+userCol+") is invalid. Available columns are 1-10\n**********************************************");
 					isValidCol =false;
@@ -245,7 +249,7 @@ public class CodeAlong3{
 					isValidCol=true;
 				}
 			}catch(Exception e){
-				System.out.println("Column ("+userCol+") is invalid. Available columns are 1-10\n**********************************************");
+				System.out.println("Column ("+colEntered+") is invalid. Available columns are 1-10\n**********************************************");
 				isValidCol =false;
 			}	
 		}
@@ -263,8 +267,10 @@ public class CodeAlong3{
 
 		while(isValidRow==false){
 			System.out.println("Enter the row to print (1-10)");
+			String rowEntered="";
 			try{
-				userRow=Integer.parseInt(kb.nextLine());//number validation
+				rowEntered=kb.nextLine();
+				userRow=Integer.parseInt(rowEntered);//number validation
 				if((userRow-1)<0||(userRow-1)>my2DArray.length){//validate if number is within acceptable range
 					System.out.println("Row ("+userRow+") is invalid. Available rows are 1-10\n**********************************************");
 					isValidRow =false;
@@ -273,15 +279,17 @@ public class CodeAlong3{
 					isValidRow=true;
 				}
 			}catch(Exception e){
-				System.out.println("Row ("+userRow+") is invalid. Available rows are 1-10\n**********************************************");
+				System.out.println("Row ("+rowEntered+") is invalid. Available rows are 1-10\n**********************************************");
 				isValidRow =false;
 			}	
 		}
 
 		while(isValidCol==false){
 			System.out.println("Enter the column to print (1-10)");
+			String colEntered="";
 			try{
-				userCol=Integer.parseInt(kb.nextLine());//number validation
+				colEntered= kb.nextLine();
+				userCol=Integer.parseInt(colEntered);//number validation
 				if((userCol-1)<0||(userCol-1)>my2DArray[0].length){//validate if number is within acceptable range
 					System.out.println("Column ("+userCol+") is invalid. Available columns are 1-10\n**********************************************");
 					isValidCol =false;
@@ -290,7 +298,7 @@ public class CodeAlong3{
 					isValidCol=true;
 				}
 			}catch(Exception e){
-				System.out.println("Column ("+userCol+") is invalid. Available columns are 1-10\n**********************************************");
+				System.out.println("Column ("+colEntered+") is invalid. Available columns are 1-10\n**********************************************");
 				isValidCol =false;
 			}	
 		}

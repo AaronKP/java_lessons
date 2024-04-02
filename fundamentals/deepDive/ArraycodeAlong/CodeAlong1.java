@@ -16,7 +16,7 @@ public class CodeAlong1{
 		count(max);
 	}
 
-	public static void count(int [][] max){
+	public static void count(int [][] max){//print array method
 		//int i=1;
 		// do{
 		// 	System.out.println(i);
