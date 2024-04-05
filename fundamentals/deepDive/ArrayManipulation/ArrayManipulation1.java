@@ -3,12 +3,10 @@ public class ArrayManipulation1 {
         int[] array = new int[10];
        
         //Populate array with random numbers
+        populateRandom(array);
         
         printArray("array with random numbers ",array);
-
-        //Add a for loop in the indicated position that we clear the array by setting all the values to 0.
-
-
+       	clearArray(array);//clear array
         printArray("array with zeros ",array);
 
     }
@@ -27,5 +25,19 @@ public class ArrayManipulation1 {
             
         }
         System.out.print("]\n");
+    }
+
+    //clear array method by setting elements to 0
+    public static void clearArray(int[] array){
+    	for (int i=0;i<array.length ;i++ ) {
+    		array[i]=0;//set every 
+    	}
+    }
+
+    //method to populate array with random numbers.
+    public static void populateRandom(int[] array){
+    	for (int i=0;i<array.length ;i++ ) {
+    		array[i]=(int)(Math.random()*100);
+    	}
     }
 }
