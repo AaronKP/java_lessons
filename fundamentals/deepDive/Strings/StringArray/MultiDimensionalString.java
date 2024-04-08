@@ -13,7 +13,7 @@ public class MultiDimensionalString{
 	//method to convert a string into a multi dimensional array.
 	public static int[][] toIntArray2D(String line){
 		String[] arrays = line.split("\n");// split the string based on \n to get the different arrays within the 2d array
-		String [] row;//this will store the array returned when we use split on "arrays" elements 
+		String [] row;//this will store the array returned when we use split on "arrays" elements.Temp array
 		int[][] intArray = new int[arrays.length][];//declare as jagged for convenience
 
 		for (int i =0;i<arrays.length ;i++ ) {
