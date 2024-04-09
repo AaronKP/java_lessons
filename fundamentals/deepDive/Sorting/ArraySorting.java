@@ -1,11 +1,14 @@
 public class ArraySorting{
 	public static void main(String[] args) {
 		int[] myArray= new int[50];//array declaration
+
+		//alter array size
+		myArray=alterArraySize(myArray);
 		//populate array
 		populateArray(myArray);
 		printArray("\nOriginal populated array:\n", myArray);
 		printArray("\nAltered array at position 20:\n", alterElementAt(myArray,20,60));//add 60 to 20th element
-		printArray("\nAltered array at position 21:\n", alterElementAt(myArray,21,61));//add 61 to 21st element
+		printArray("\nAltered array at position 61:\n", alterElementAt(myArray,61,61));//add 61 to 21st element
 		//printArray("\nSorted descending array:\n", sortDesc(myArray));
 		//print in decending order
 		printArray("\nSorted descending array:\n", bubblesortDesc(myArray));
@@ -13,6 +16,14 @@ public class ArraySorting{
 		printArray("\nSorted Ascending array:\n", sortAsc(myArray));
 
 
+	}
+
+	//method to alter array size
+	public static int []  alterArraySize(int [] array){
+		int newSize=array.length+50;//increase size by 50
+		int [] newArray= new int[newSize];//declare new array with new size
+
+		return newArray;
 	}
 
 	//method to populate array with random nrs

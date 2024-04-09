@@ -18,7 +18,7 @@ public class Fibonacci{
 				sum=firstTerm+secondTerm;//assign the next term in the squence to be the sum of the previous two terms
 				System.out.print(sum);
 				firstTerm=secondTerm;//shift the first term up a position . Now stores seconf term
-				secondTerm=sum;//sfist the second term up a position. Now stores sum
+				secondTerm=sum;//shift the second term up a position. Now stores sum
 			}
 			if(i<terms-1){
 				System.out.print(", ");//output formatting 
