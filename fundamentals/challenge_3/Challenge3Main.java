@@ -32,9 +32,11 @@ public class Challenge3Main{
 				UserDAO.printGreeting();
 				break;
 			case "2":
+				UserDAO.delete(Prompter.prompt("Email address of user to be delete:"));
 				break;
 
 			case "3":
+				UserDAO.getUpdates(Prompter.prompt("Email address of user to be updated:"));
 				break;
 			case "4":
 				UserDAO.print();
