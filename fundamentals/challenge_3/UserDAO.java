@@ -126,10 +126,10 @@ public class UserDAO{
 	public static void delete(String email){
 		String [] user=getUserByEmail(email);
 		if(userDB.length==0){
-			System.out.println("No users on database");
+			System.out.println("**************************\nNo users on database\n**************************");
 		
 		}else if (isEmailFound==false) {
-			System.out.println("Entered email address cannot be located.");
+			System.out.println("**************************\nEntered email address cannot be located.\n**************************");
 		}else{
 			System.out.println("Record for: "+email+"\n************************************");
 			System.out.println("******************************************************************DATABASE USERS******************************************************************");
@@ -169,6 +169,7 @@ public class UserDAO{
             	}
 
             	userDB=tempArray;//set original to contracted array
+            	System.out.println("**************************\nUser successfully deleted\n**************************");
          	}
 			
 		}
@@ -261,6 +262,28 @@ public class UserDAO{
             	System.out.println();
         }
         System.out.println("*************************************************************************************************************************************************");
+	}
+
+	//method to print only the user's
+	public static String [] findAll(){
+		String [] allUsers= new String[userDB.length];
+		for (int row=0;row<userDB.length;row++ ) {
+			allUsers[row]=userDB[row][0];
+		}
+
+		return allUsers;
+	}
+
+	//print a single user record
+	public static void printUsers(){
+		String [] user =findAll();
+		System.out.println("******************************************************************DATABASE USERS******************************************************************");
+		System.out.println();
+		for ( int i=0;i<user.length;i++ ) {
+			
+			System.out.print("("+(i+1)+") "+user[i]+"\n");//format output
+		}
+		System.out.println("\n*************************************************************************************************************************************************");
 	}
 
 	//method to calculate user's age.

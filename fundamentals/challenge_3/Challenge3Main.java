@@ -40,6 +40,7 @@ public class Challenge3Main{
 				break;
 			case "4":
 				UserDAO.print();
+				UserDAO.printUsers();
 				break;
 			case "5":
 				response=Prompter.prompt("Confirm exit: Y to exit, any other key to return.");//store confirmation
